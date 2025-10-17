@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'DB_HOSTNAME', // replace with your database host
-	'username' => 'DB_USERNAME', // replace with your database username
-	'password' => 'DB_PASSWORD', // replace with your database password
-	'database' => 'DB_NAME', // replace with your database name
+	'hostname' => 'sql100.infinityfree.com', // replace with your database host
+	'username' => 'if0_40182277', // replace with your database username
+	'password' => '8UqLY8MfYgcQ', // replace with your database password
+	'database' => 'if0_40182277_dash', // replace with your database name
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

@@ -235,7 +235,7 @@ class GoGetSSLApi
     public function getAccountDetails()
     {
         if (!$this->key) {
-            throw new GoGetSSLAuthException();
+            throw new GoGetSSLAuthExceptio();
         }
 
         return $this->call('/account/', ['auth_key' => $this->key]);

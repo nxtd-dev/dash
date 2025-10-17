@@ -15,7 +15,9 @@
 						<label class="form-label">SSL Type</label>
 						<select class="form-control mb-2" name="type">
 							<?php
-							if ($this->acme->get_letsencrypt() != 'not-set' && $this->acme->get_letsencrypt() != '') {
+							$cloudflare = $this->acme->get_cloudflare();
+							if ($this->acme->get_letsencrypt() == 'not-set' && $cloudflare == 'not-set') {
+							} elseif ($cloudflare['email'] != '' && $cloudflare['api_key'] != '') {
 							?>
 							<option value="letsencrypt" selected="true">Let's Encrypt</option>
 							<?php
@@ -30,8 +32,9 @@
 							?>
 							<?php
 							$zerossl = $this->acme->get_zerossl();
-							if ($zerossl == 'not-set') {}
-							elseif ($zerossl['url'] != '' && $zerossl['eab_kid'] != '' && $zerossl['eab_hmac_key'] != '') {
+							if ($zerossl == 'not-set' && $cloudflare != 'not-set') {
+
+							} elseif ($zerossl['url'] != '' && $zerossl['eab_kid'] != '' && $zerossl['eab_hmac_key'] != '' && $cloudflare['email'] != '' && $cloudflare['api_key'] != '') {
 							?>
 							<option value="zerossl">ZeroSSL</option>
 							<?php
@@ -39,9 +42,9 @@
 							?>
 							<?php
 							$googletrust = $this->acme->get_googletrust();
-							if ($googletrust == 'not-set') {
+							if ($googletrust == 'not-set' && $cloudflare != 'not-set') {
 
-							} elseif ($googletrust['url'] != '' && $googletrust['eab_kid'] != '' && $googletrust['eab_hmac_key'] != '') {
+							} elseif ($googletrust['url'] != '' && $googletrust['eab_kid'] != '' && $googletrust['eab_hmac_key'] != '' && $cloudflare['email'] != '' && $cloudflare['api_key'] != '') {
 							?>
 							<option value="googletrust">Google Trust Services</option>
 							<?php
@@ -53,7 +56,6 @@
 					<?php
 					else :
 					?>
-					<input type="hidden" value="gogetssl" name="type">
 					<div class="col-sm-12 mb-2">
 					<?php
 					endif;

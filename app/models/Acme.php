@@ -189,24 +189,12 @@ class acme extends CI_Model
         $key = md5($this->base->get_hostname() . ':' . $this->user->get_email() . ':' . $certificateOrder->getOrderEndpoint() . ':' . time());
         $key = substr($key, 0, 20);
 
-        $this->load->library('acmedns');
-        $acmednsUrl = 'https://auth.acme-dns.io';
-        $acmedns = new Acmedns($acmednsUrl);
-
-        $addResult = true;
-        $registrationDetails = $acmedns->registerDomain();
-        if ($registrationDetails) {
-            $username = $registrationDetails['username'];
-            $password = $registrationDetails['password'];
-            $subdomain = $registrationDetails['subdomain'];
-        
-            if (!$acmedns->updateTxtRecord($username, $password, $subdomain, $dnsContent)) {
-                $addResult = false;
-            }
-        } else {
-            $addResult = false;
-        }
-        $registrationDetails = json_encode($registrationDetails);
+        $this->load->library('cloudflareapi');
+        $cfCredentials = $this->get_cloudflare();
+        $cf_api = new CloudFlareAPI();
+        $cf_api->auth($cfCredentials['email'], $cfCredentials['api_key']);
+        $cf_api->setZone($cfCredentials['domain']);
+        $addResult = $cf_api->addDNSrecord('txt', $key, $dnsContent);
 
         $data = [
             'ssl_pid' => $certificateOrder->getOrderEndpoint(),
@@ -218,9 +206,9 @@ class acme extends CI_Model
             'ssl_dns' => $dnsContent,
             'ssl_dnsid' => ''
         ];
-        if ($addResult) {
-            $data['ssl_dns'] = $subdomain;
-            $data['ssl_dnsid'] = $registrationDetails;
+        if ($addResult['status']) {
+            $data['ssl_dns'] = $key.'.'.$cfCredentials['domain'];
+            $data['ssl_dnsid'] = $addResult['id'];
         }
         $res = $this->db->insert('is_ssl', $data);
 
@@ -333,6 +321,14 @@ class acme extends CI_Model
                 $dn = new DistinguishedName($domain);
                 $csr = new CertificateRequest($dn, $domainKeyPair);
                 $this->acme->finalizeOrder($order, $csr, 180, false);
+
+                $this->load->library('cloudflareapi');
+                $cfCredentials = $this->get_cloudflare();
+                $cf_api = new CloudFlareAPI();
+                $cf_api->auth($cfCredentials['email'], $cfCredentials['api_key']);
+                $cf_api->setZone($cfCredentials['domain']);
+                $cf_api->deleteDNSrecord($dnsid);
+
                 $res = $this->base->update(
                     ['status' => 'processing'],
                     ['key' => $key],
@@ -344,7 +340,14 @@ class acme extends CI_Model
                 }
             }
         } catch (Throwable $e) {
-            if (strpos($e->getMessage(), 'authorization must be pending') !== false) {                
+            if (strpos($e->getMessage(), 'authorization must be pending') !== false) {
+                $this->load->library('cloudflareapi');
+                $cfCredentials = $this->get_cloudflare();
+                $cf_api = new CloudFlareAPI();
+                $cf_api->auth($cfCredentials['email'], $cfCredentials['api_key']);
+                $cf_api->setZone($cfCredentials['domain']);
+                $cf_api->deleteDNSrecord($dnsid);
+                
                 $res = $this->base->update(
                     ['status' => 'cancelled'],
                     ['key' => $key],
@@ -355,6 +358,33 @@ class acme extends CI_Model
             return false;
         }
         return false;
+    }
+
+    public function deleteRecord($key) {
+    try {
+        $res = $this->fetch(['key' => $key]);
+		if($res !== []) {
+            $dnsid = $res[0]['ssl_dnsid'];
+        } else {
+            return False;
+        }
+        $status = $res[0]['ssl_status'];
+        if ($status == 'pending' || $status == 'ready') {
+            $this->load->library('cloudflareapi');
+            $cfCredentials = $this->get_cloudflare();
+            $cf_api = new CloudFlareAPI();
+            $cf_api->auth($cfCredentials['email'], $cfCredentials['api_key']);
+            $cf_api->setZone($cfCredentials['domain']);
+            if ($cf_api->deleteDNSrecord($dnsid)) {
+                return true;
+            }
+            return false;
+        } else {
+            return true;
+        }
+    } catch (Throwable $e) {
+      
+    }
     }
 
     public function getCertificate($orderId, $privateKey)
@@ -816,6 +846,26 @@ class acme extends CI_Model
 		return false;
 	}
 
+    function get_cloudflare()
+	{
+		$res = $this->fetch_base();
+		if($res !== false)
+		{
+            if ($res['acme_cloudflare'] != 'not-set') {
+                $cloudflare = json_decode($res['acme_cloudflare'], true);
+                $return = [
+                    'email' => $cloudflare['email'],
+                    'api_key' => $cloudflare['api_key'],
+                    'domain' => $cloudflare['domain']
+                ];
+			    return $return;
+            } else {
+                return 'not-set';
+            }
+		}
+		return false;
+	}
+
     function get_dns()
 	{
 		$res = $this->fetch_base();
@@ -859,6 +909,25 @@ class acme extends CI_Model
                 $zerossl = json_encode($zerossl);
             }
             $res = $this->update('zerossl', $zerossl);
+        }
+		if($res)
+		{
+			return true;
+		}
+		return false;
+	}
+
+    function set_cloudflare($cloudflare)
+	{
+        if ($cloudflare == 'not-set') {
+            $res = $this->update('cloudflare', $cloudflare);
+        } else {
+            if ($cloudflare['email'] == '' && $cloudflare['api_key'] == '' && $cloudflare['domain'] == '') {
+                $cloudflare = 'not-set';
+            } else {
+                $cloudflare = json_encode($cloudflare);
+            }
+            $res = $this->update('cloudflare', $cloudflare);
         }
 		if($res)
 		{
