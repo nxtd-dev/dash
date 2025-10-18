@@ -9,7 +9,7 @@ CREATE TABLE `is_base` (
 	`base_fourm` varchar(100) NOT NULL,
 	`base_template` varchar(100) NOT NULL DEFAULT 'default',
 	`base_status` varchar(8) NOT NULL,
-	`base_rpp` int(10) NOT NULL DEFAULT '1'
+	`base_rpp` int(10) NOT NULL DEFAULT '15'
 );
 
 -- Insert default record for `is_base`
@@ -477,7 +477,6 @@ CREATE TABLE `is_acme` (
 	`acme_letsencrypt` varchar(100) NOT NULL,
 	`acme_zerossl` varchar(1000) NOT NULL,
 	`acme_googletrust` varchar(1000) NOT NULL,
-	`acme_cloudflare` varchar(1000) NOT NULL,
 	`acme_status` varchar(8) NOT NULL,
 	`acme_dns` varchar(500) NULL
 );
@@ -486,16 +485,14 @@ INSERT INTO `is_acme` (
 	`acme_letsencrypt`,
 	`acme_zerossl`,
 	`acme_googletrust`,
-	`acme_cloudflare`,
 	`acme_status`,
 	`acme_dns`
 ) VALUES (
 	'not-set',
 	'not-set',
 	'not-set',
-	'not-set',
 	'inactive',
-	'{"doh":"active","resolver":"dns.google"}',
+	'{"doh":"active","resolver":"dns.google"}'
 );
 
 -- Create new table `is_ssl`
