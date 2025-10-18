@@ -178,7 +178,7 @@ class Recaptcha extends CI_Model
 	{
 		$res = $this->base->update(
 			[$field => $value],
-			['id' => 'xera_recaptcha'],
+			['id' => 'gfw_recaptcha'],
 			'is_recaptcha',
 			'recaptcha_'
 		);
@@ -193,7 +193,7 @@ class Recaptcha extends CI_Model
 	{
 		$res = $this->base->fetch(
 			'is_recaptcha',
-			['id' => 'xera_recaptcha'],
+			['id' => 'gfw_recaptcha'],
 			'recaptcha_'
 		);
 		if(count($res) > 0)

@@ -1,6 +1,6 @@
 <?php
 
-define("HASH_SALT", "xera_salt");
+define("HASH_SALT", "gfw_salt");
 
 if (!function_exists('char64')) {
 	function char64($string)

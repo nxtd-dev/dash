@@ -97,7 +97,7 @@
 						</div>
 						<div class="col">
 							<div class="font-weight-medium">
-								About Xera
+								About Get Free Website
 							</div>
 							<div class="text-muted">
 								<a href="<?= base_url() ?>about" class="text-muted" target="_blank">View here.</a>
@@ -142,7 +142,7 @@
 								Documentation
 							</div>
 							<div class="text-muted">
-								<a href="https://github.com/mahtab2003/Xera/blob/dev/Setup-Guide.md" class="text-muted" target="_blank">Setup Guide</a>
+								<a href="https://github.com/LightHostingFree/Get Free Website/blob/dev/Setup-Guide.md" class="text-muted" target="_blank">Setup Guide</a>
 							</div>
 						</div>
 					</div>
@@ -163,7 +163,7 @@
 								Need Help?
 							</div>
 							<div class="text-muted">
-								<a href="https://github.com/mahtab2003/Xera/issues" class="text-muted" target="_blank">Open an issue in GitHub.</a>
+								<a href="https://github.com/LightHostingFree/Get Free Website/issues" class="text-muted" target="_blank">Open an issue in GitHub.</a>
 							</div>
 						</div>
 					</div>
@@ -184,7 +184,7 @@
 								Contribute
 							</div>
 							<div class="text-muted">
-								<a href="https://github.com/mahtab2003/Xera/#help" class="text-muted" target="_blank">Check here.</a>
+								<a href="https://github.com/LightHostingFree/Get Free Website/#help" class="text-muted" target="_blank">Check here.</a>
 							</div>
 						</div>
 					</div>
@@ -202,10 +202,10 @@
 						</div>
 						<div class="col">
 							<div class="font-weight-medium">
-								Like Xera?
+								Like Get Free Website?
 							</div>
 							<div class="text-muted">
-								<a href="https://xera.eu.org/DONATE.md" class="text-muted" target="_blank">Donate here.</a>
+								<a href="https://gfw.eu.org/DONATE.md" class="text-muted" target="_blank">Donate here.</a>
 							</div>
 						</div>
 					</div>

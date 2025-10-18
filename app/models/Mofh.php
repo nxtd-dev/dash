@@ -439,7 +439,7 @@ class Mofh extends CI_Model
 	{
 		$res = $this->base->update(
 			[$field => $value],
-			['id' => 'xera_mofh'],
+			['id' => 'gfw_mofh'],
 			'is_mofh',
 			'mofh_'
 		);
@@ -479,7 +479,7 @@ class Mofh extends CI_Model
 	{
 		$res = $this->base->fetch(
 			'is_mofh',
-			['id' => 'xera_mofh'],
+			['id' => 'gfw_mofh'],
 			'mofh_'
 		);
 		if(count($res) > 0)

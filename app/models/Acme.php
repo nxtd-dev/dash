@@ -1012,7 +1012,7 @@ class acme extends CI_Model
 	{
 		$res = $this->base->update(
 			[$index => $value],
-			['id' => 'xera_acme'],
+			['id' => 'gfw_acme'],
 			'is_acme',
 			'acme_'
 		);
@@ -1027,7 +1027,7 @@ class acme extends CI_Model
 	{
 		$res = $this->base->fetch(
 			'is_acme',
-			['id' => 'xera_acme'],
+			['id' => 'gfw_acme'],
 			'acme_'
 		);
 		if(count($res) > 0)

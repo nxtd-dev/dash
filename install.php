@@ -15,13 +15,13 @@ $base_path = str_replace('2', '', $base_path);
 $base_path = str_replace('3', '', $base_path);
 $base_url = $protocol . $hostname . $base_path;
 if (isset($_GET['step']) and $_GET['step'] == 1) {
-	$title = 'Basic Settings - Xera Installation';
+	$title = 'Basic Settings - Get Free Website Installation';
 } elseif (isset($_GET['step']) and $_GET['step'] == 2) {
-	$title = 'Database Settings - Xera Installation';
+	$title = 'Database Settings - Get Free Website Installation';
 } elseif (isset($_GET['step']) and $_GET['step'] == 3) {
-	$title = 'Next Step - Xera Installation';
+	$title = 'Next Step - Get Free Website Installation';
 } else {
-	$title = 'Welcome to Xera Installation Page';
+	$title = 'Welcome to Get Free Website Installation Page';
 }
 ?>
 <!DOCTYPE html>
@@ -54,7 +54,7 @@ if (isset($_GET['step']) and $_GET['step'] == 1) {
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Cookie Prefix</label>
-								<input required type="text" name="cookie_prefix" class="form-control" placeholder="xera_" value="xera_">
+								<input required type="text" name="cookie_prefix" class="form-control" placeholder="gfw_" value="gfw_">
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Enable CSRF Protection</label>
@@ -86,7 +86,7 @@ if (isset($_GET['step']) and $_GET['step'] == 1) {
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Database</label>
-								<input required type="text" name="database" class="form-control" placeholder="xera">
+								<input required type="text" name="database" class="form-control" placeholder="gfw">
 							</div>
 							<div class="form-footer mt-1">
 								<input type="submit" name="submit" value="Next Step" class="btn btn-primary w-100">
@@ -95,16 +95,16 @@ if (isset($_GET['step']) and $_GET['step'] == 1) {
 					</form>
 				<?php elseif (isset($_GET['step']) and $_GET['step'] == 3) : ?>
 					<div class="card-body">
-						<h2 class="card-title text-center mb-3">Welcome to Xera!</h2>
-						<p class="text-muted mb-3">Xera has been installed successfully! Once you click on the button below, you will be redirected to the admin registration page and the install.php file will be deleted automatically.</p>
+						<h2 class="card-title text-center mb-3">Welcome to Get Free Website!</h2>
+						<p class="text-muted mb-3">Get Free Website has been installed successfully! Once you click on the button below, you will be redirected to the admin registration page and the install.php file will be deleted automatically.</p>
 						<div class="form-footer mt-1">
 							<a href="<?= $base_url ?>admin/register" class="btn btn-primary w-100">Redirect</a>
 						</div>
 					</div>
 				<?php else : ?>
 					<div class="card-body">
-						<h2 class="card-title text-center mb-3">Welcome to Xera!</h2>
-						<p class="text-muted mb-3">Xera is a hosting account and support management system especially designed to work with MyOwnFreeHost and the GoGetSSL API. Please click on the button below to continue the installation.</p>
+						<h2 class="card-title text-center mb-3">Welcome to Get Free Website!</h2>
+						<p class="text-muted mb-3">Get Free Website is a hosting account and support management system especially designed to work with MyOwnFreeHost and the GoGetSSL API. Please click on the button below to continue the installation.</p>
 						<div class="form-footer mt-1">
 							<a href="<?= $base_url ?>install.php?step=1" class="btn btn-primary w-100">Get Started</a>
 						</div>
@@ -144,7 +144,7 @@ if (isset($_GET['step']) and $_GET['step'] == 1 and isset($_POST['submit'])) {
 	} else {
 		$csrf_value = 'TRUE';
 	}
-	$file = file_get_contents('https://raw.githubusercontent.com/mahtab2003/Xera/dev/app/config/config.php');
+	$file = file_get_contents('https://raw.githubusercontent.com/LightHostingFree/Get Free Website/dev/app/config/config.php');
 	$data = str_replace('BASE_URL_VALUE', $base_url_value, $file);
 	$data = str_replace('COOKIE_PREFIX_VALUE', $cookie_prefix, $data);
 	$data = str_replace('CSRF_PROTECTION_MODE', $csrf_value, $data);
@@ -166,38 +166,38 @@ if (isset($_GET['step']) and $_GET['step'] == 1 and isset($_POST['submit'])) {
 		$_SESSION['msg'] = json_encode(['danger', 'Database connect cannot be establised.']);
 		header('location: ' . $base_url . 'install.php?step=2');
 	} else {
-		$sql = mysqli_query($mysqli, "CREATE TABLE `is_base` (`base_id` varchar(89) NOT NULL DEFAULT 'xera_base',`base_name` varchar(20) NOT NULL,`base_email` varchar(100) NOT NULL,`base_template` varchar(100) NOT NULL DEFAULT 'default', `base_fourm` varchar(100) NOT NULL,`base_status` varchar(8) NOT NULL, `base_rpp` int(10) NOT NULL DEFAULT '15'
+		$sql = mysqli_query($mysqli, "CREATE TABLE `is_base` (`base_id` varchar(89) NOT NULL DEFAULT 'gfw_base',`base_name` varchar(20) NOT NULL,`base_email` varchar(100) NOT NULL,`base_template` varchar(100) NOT NULL DEFAULT 'default', `base_fourm` varchar(100) NOT NULL,`base_status` varchar(8) NOT NULL, `base_rpp` int(10) NOT NULL DEFAULT '15'
 );");
 
 		$sql = mysqli_query($mysqli, "INSERT INTO `is_base` (`base_id`,`base_name`,`base_email`,`base_fourm`,`base_status`
-		) VALUES ('xera_base','Web Host','abc@gmail.com','fourm.example.com','active'
+		) VALUES ('gfw_base','Web Host','abc@gmail.com','fourm.example.com','active'
 		);");
 
 		$sql = mysqli_query($mysqli, "DROP TABLE IF EXISTS `is_recaptcha`;");
 
-		$sql = mysqli_query($mysqli, "CREATE TABLE `is_recaptcha` (`recaptcha_id` varchar(89) NOT NULL DEFAULT 'xera_recaptcha',`recaptcha_site` varchar(200) NOT NULL,`recaptcha_key` varchar(200) NOT NULL,`recaptcha_status` varchar(8) NOT NULL,`recaptcha_type` varchar(15) NOT NULL
+		$sql = mysqli_query($mysqli, "CREATE TABLE `is_recaptcha` (`recaptcha_id` varchar(89) NOT NULL DEFAULT 'gfw_recaptcha',`recaptcha_site` varchar(200) NOT NULL,`recaptcha_key` varchar(200) NOT NULL,`recaptcha_status` varchar(8) NOT NULL,`recaptcha_type` varchar(15) NOT NULL
 		);");
 
 		$sql = mysqli_query($mysqli, "INSERT INTO `is_recaptcha` (`recaptcha_id`,`recaptcha_site`,`recaptcha_key`,`recaptcha_status`,`recaptcha_type`
-		) VALUES ('xera_recaptcha','site key','secret key','inactive','google'
+		) VALUES ('gfw_recaptcha','site key','secret key','inactive','google'
 		);");
 
 		$sql = mysqli_query($mysqli, "DROP TABLE IF EXISTS `is_smtp`;");
 
-		$sql = mysqli_query($mysqli, "CREATE TABLE `is_smtp` (`smtp_id` varchar(9) NOT NULL DEFAULT 'xera_smtp',`smtp_hostname` varchar(100) NOT NULL,`smtp_username` varchar(100) NOT NULL,`smtp_password` varchar(100) NOT NULL,`smtp_port` varchar(8) NOT NULL,`smtp_from` varchar(100) NOT NULL,`smtp_status` varchar(8) NOT NULL,`smtp_name` varchar(50) NOT NULL, `smtp_encryption` varchar(5) NOT NULL
+		$sql = mysqli_query($mysqli, "CREATE TABLE `is_smtp` (`smtp_id` varchar(9) NOT NULL DEFAULT 'gfw_smtp',`smtp_hostname` varchar(100) NOT NULL,`smtp_username` varchar(100) NOT NULL,`smtp_password` varchar(100) NOT NULL,`smtp_port` varchar(8) NOT NULL,`smtp_from` varchar(100) NOT NULL,`smtp_status` varchar(8) NOT NULL,`smtp_name` varchar(50) NOT NULL, `smtp_encryption` varchar(5) NOT NULL
 		);");
 
 		$sql = mysqli_query($mysqli, "INSERT INTO `is_smtp` (`smtp_id`,`smtp_hostname`,`smtp_username`,`smtp_password`,`smtp_port`,`smtp_from`,`smtp_status`,`smtp_name`,`smtp_encryption`
-		) VALUES ('xera_smtp','smtp.example.com','username','password','587','jhon@example.com','inactive','Web Host','none'
+		) VALUES ('gfw_smtp','smtp.example.com','username','password','587','jhon@example.com','inactive','Web Host','none'
 		);");
 
 		$sql = mysqli_query($mysqli, "DROP TABLE IF EXISTS `is_mofh`;");
 
-		$sql = mysqli_query($mysqli, "CREATE TABLE `is_mofh` (`mofh_id` varchar(9) NOT NULL DEFAULT 'xera_mofh',`mofh_username` varchar(256) NOT NULL,`mofh_password` varchar(256) NOT NULL,`mofh_cpanel` varchar(100) NOT NULL,`mofh_ns_1` varchar(50) NOT NULL,`mofh_ns_2` varchar(50) NOT NULL,`mofh_package` varchar(50) NOT NULL
+		$sql = mysqli_query($mysqli, "CREATE TABLE `is_mofh` (`mofh_id` varchar(9) NOT NULL DEFAULT 'gfw_mofh',`mofh_username` varchar(256) NOT NULL,`mofh_password` varchar(256) NOT NULL,`mofh_cpanel` varchar(100) NOT NULL,`mofh_ns_1` varchar(50) NOT NULL,`mofh_ns_2` varchar(50) NOT NULL,`mofh_package` varchar(50) NOT NULL
 		);");
 
 		$sql = mysqli_query($mysqli, "INSERT INTO `is_mofh` (`mofh_id`,`mofh_username`,`mofh_password`,`mofh_cpanel`,`mofh_ns_1`,`mofh_ns_2`,`mofh_package`
-		) VALUES ('xera_mofh','username','password','cpanel','ns1','ns2','free'
+		) VALUES ('gfw_mofh','username','password','cpanel','ns1','ns2','free'
 		);");
 
 		$sql = mysqli_query($mysqli, "DROP TABLE IF EXISTS `is_user`;");
@@ -279,7 +279,7 @@ if (isset($_GET['step']) and $_GET['step'] == 1 and isset($_POST['submit'])) {
 
 		$sql = mysqli_query($mysqli, "DROP TABLE IF EXISTS `is_builder`;");
 
-		$sql = mysqli_query($mysqli, "CREATE TABLE `is_builder` (`builder_id` varchar(12) NOT NULL DEFAULT 'xera_builder',`builder_hostname` varchar(100) NOT NULL,`builder_username` varchar(100) NOT NULL,`builder_password` varchar(100) NOT NULL,`builder_status` varchar(8) NOT NULL
+		$sql = mysqli_query($mysqli, "CREATE TABLE `is_builder` (`builder_id` varchar(12) NOT NULL DEFAULT 'gfw_builder',`builder_hostname` varchar(100) NOT NULL,`builder_username` varchar(100) NOT NULL,`builder_password` varchar(100) NOT NULL,`builder_status` varchar(8) NOT NULL
 		);");
 
 		$sql = mysqli_query($mysqli, "INSERT INTO `is_builder` (`builder_hostname`,`builder_username`,`builder_password`,`builder_status`
@@ -288,7 +288,7 @@ if (isset($_GET['step']) and $_GET['step'] == 1 and isset($_POST['submit'])) {
 
 		$sql = mysqli_query($mysqli, "DROP TABLE IF EXISTS `is_gogetssl`;");
 
-		$sql = mysqli_query($mysqli, "CREATE TABLE `is_gogetssl` (`gogetssl_id` varchar(13) NOT NULL DEFAULT 'xera_gogetssl',`gogetssl_username` varchar(100) NOT NULL,`gogetssl_password` varchar(100) NOT NULL,`gogetssl_status` varchar(8) NOT NULL
+		$sql = mysqli_query($mysqli, "CREATE TABLE `is_gogetssl` (`gogetssl_id` varchar(13) NOT NULL DEFAULT 'gfw_gogetssl',`gogetssl_username` varchar(100) NOT NULL,`gogetssl_password` varchar(100) NOT NULL,`gogetssl_status` varchar(8) NOT NULL
 		);");
 
 		$sql = mysqli_query($mysqli, "INSERT INTO `is_gogetssl` (`gogetssl_username`,`gogetssl_password`,`gogetssl_status`
@@ -297,7 +297,7 @@ if (isset($_GET['step']) and $_GET['step'] == 1 and isset($_POST['submit'])) {
 
 		$sql = mysqli_query($mysqli, "DROP TABLE IF EXISTS `is_acme`;");
 
-		$sql = mysqli_query($mysqli, "CREATE TABLE `is_acme` (`acme_id` varchar(13) NOT NULL DEFAULT 'xera_acme', `acme_letsencrypt` varchar(100) NOT NULL, `acme_zerossl` varchar(1000) NOT NULL, `acme_googletrust` varchar(1000) NOT NULL, `acme_cloudflare` varchar(1000) NOT NULL, `acme_status` varchar(8) NOT NULL, `acme_dns` varchar(500) NULL);");
+		$sql = mysqli_query($mysqli, "CREATE TABLE `is_acme` (`acme_id` varchar(13) NOT NULL DEFAULT 'gfw_acme', `acme_letsencrypt` varchar(100) NOT NULL, `acme_zerossl` varchar(1000) NOT NULL, `acme_googletrust` varchar(1000) NOT NULL, `acme_cloudflare` varchar(1000) NOT NULL, `acme_status` varchar(8) NOT NULL, `acme_dns` varchar(500) NULL);");
 
 		$sql = mysqli_query($mysqli, "INSERT INTO `is_acme` (`acme_letsencrypt`, `acme_zerossl`, `acme_googletrust`, `acme_cloudflare`, `acme_dns`, `acme_status`) VALUES ('not-set', 'not-set', 'not-set', 'not-set', '{\"doh\":\"active\",\"resolver\":\"dns.google\"}', 'inactive');");
 
@@ -325,7 +325,7 @@ if (isset($_GET['step']) and $_GET['step'] == 1 and isset($_POST['submit'])) {
                 $sql = mysqli_query($mysqli, "ALTER TABLE is_recaptcha CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
                 $sql = mysqli_query($mysqli, "ALTER TABLE is_reply CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
 		if ($sql) {
-			$file = file_get_contents('https://raw.githubusercontent.com/mahtab2003/Xera/dev/app/config/database.php');
+			$file = file_get_contents('https://raw.githubusercontent.com/LightHostingFree/Get Free Website/dev/app/config/database.php');
 			$data = str_replace('DB_HOSTNAME', $hostname, $file);
 			$data = str_replace('DB_USERNAME', $username, $data);
 			$data = str_replace('DB_PASSWORD', $password, $data);

@@ -1,6 +1,6 @@
-# Xera setup Documentation
+# Get Free Website setup Documentation
 ## General Settings:
-Access your Xera admin section: `https://{your.domain}/{xera-directory}/admin/`.
+Access your Get Free Website admin section: `https://{your.domain}/{gfw-directory}/admin/`.
 - **Host Name:** Your hosting name.
 - **Forum URL:** URL of your forum, including https://.
 - **Alert Email:** Your hosting email to receive ticket replies and notifications of new tickets.
@@ -8,17 +8,17 @@ Access your Xera admin section: `https://{your.domain}/{xera-directory}/admin/`.
 - **Records per Page:** Number of records displayed per page for accounts, SSL certificates, tickets, or ticket replies. Recommended setting for free hosting is 5, based on your server's capacity.
 
 ## MyOwnFreeHost Integration (Important):
-1. Access your Xera admin section: `https://{your.domain}/{xera-directory}/admin`.
+1. Access your Get Free Website admin section: `https://{your.domain}/{gfw-directory}/admin`.
 2. Navigate to `Settings` -> `API Settings` -> `MyOwnFreeHost`.
 
 ### Setting Up Your MOFH Account:
 1. Visit the [MOFH Panel](https://panel.myownfreehost.net/panel/index.php).
 2. Go to `API` -> `Setup WHM API`.
 3. Select your domain and click `Get Keys / Set Allow IP Address`.
-4. Enter the Shared IP shown in Xera into the `API Allowed IP` field.
-5. Enter the Callback URL shown in Xera into the `API Callback URL` field.
+4. Enter the Shared IP shown in Get Free Website into the `API Allowed IP` field.
+5. Enter the Callback URL shown in Get Free Website into the `API Callback URL` field.
 
-### Configuring MOFH in Xera:
+### Configuring MOFH in Get Free Website:
 1. Enter the API username from the MOFH API page into the username field.
 2. Enter the API password from the MOFH API page into the password field.
 3. Set `CPanel URL` to `cpanel.{your-reseller-domain}`.
@@ -33,7 +33,7 @@ After saving, click `Test Connection` to verify the credentials are set correctl
 2. Set `Hostname` to the hostname provided by your SMTP provider.
 3. Enter your `Username` and `Password` for SMTP.
 4. Set `From Email` to the email address used for sending mails (must be authenticated by the SMTP provider).
-5. Enter the `From Name` to display as the sender in emails from Xera.
+5. Enter the `From Name` to display as the sender in emails from Get Free Website.
 6. Set `SMTP Port` as provided by your SMTP provider.
 7. Configure `SMTP Encryption`:
    - `25/2525` = None
@@ -42,22 +42,22 @@ After saving, click `Test Connection` to verify the credentials are set correctl
 8. Set `SMTP Status` to `Active` to enable mailing or `Inactive` to disable.
 
 ## Bot Protection:
-To protect your site from automated abuse, Xera supports several bot protection services. Here’s how to set them up:
+To protect your site from automated abuse, Get Free Website supports several bot protection services. Here’s how to set them up:
 
-1. **Google reCAPTCHA:** Go to the Google reCAPTCHA website, sign up, and get the necessary site key and secret key. Enter these credentials in Xera.
-2. **Human Captcha:** If you have a preferred human captcha service, obtain the credentials from the service provider and enter them in Xera.
-3. **CryptoLoot:** Visit the CryptoLoot website, register, and get the required API key. Enter this key in Xera.
-4. **Cloudflare Turnstile:** Sign up on the Cloudflare website, get the required credentials, and enter them in Xera.
+1. **Google reCAPTCHA:** Go to the Google reCAPTCHA website, sign up, and get the necessary site key and secret key. Enter these credentials in Get Free Website.
+2. **Human Captcha:** If you have a preferred human captcha service, obtain the credentials from the service provider and enter them in Get Free Website.
+3. **CryptoLoot:** Visit the CryptoLoot website, register, and get the required API key. Enter this key in Get Free Website.
+4. **Cloudflare Turnstile:** Sign up on the Cloudflare website, get the required credentials, and enter them in Get Free Website.
 
-To enable or disable a specific bot protection service, toggle its status in Xera.
+To enable or disable a specific bot protection service, toggle its status in Get Free Website.
 
 ## SSL Certificates (GoGetSSL):
 To manage SSL certificates through GoGetSSL, follow these steps:
 1. Obtain your API credentials from [GoGetSSL](https://my.gogetssl.com) by navigating to `Reseller Modules` -> `API Settings`.
-2. Enter the obtained API credentials into Xera under the SSL configuration section.
+2. Enter the obtained API credentials into Get Free Website under the SSL configuration section.
 
 ## ACME SSL Configuration:
-Xera supports ACME SSL certificate provisioning from multiple providers. Configure them as follows:
+Get Free Website supports ACME SSL certificate provisioning from multiple providers. Configure them as follows:
 
 ### Let's Encrypt:
 Refer to [Let's Encrypt Get Started Page](https://letsencrypt.org/getting-started/)
@@ -70,7 +70,7 @@ Refer to [ZeroSSL ACME Documentation](https://zerossl.com/documentation/acme/)
 - **EAB HMAC Key:** Enter your EAB HMAC Key from ZeroSSL.
 
 ### Google Trust:
-**Important:** Google Trust isn't supported on Xera due it's requirments and the way it works, so please dont use it. \
+**Important:** Google Trust isn't supported on Get Free Website due it's requirments and the way it works, so please dont use it. \
 Refer to [Public CA Tutorial](https://cloud.google.com/certificate-manager/docs/public-ca-tutorial)
 - **Directory URL:** Enter the directory URL provided by Google Trust Services.
 - **EAB Key ID:** Enter your EAB Key ID from Google Trust Services.

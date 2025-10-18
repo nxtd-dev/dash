@@ -3,7 +3,7 @@
 DROP TABLE IF EXISTS `is_base`;
 
 CREATE TABLE `is_base` (
-	`base_id` varchar(89) NOT NULL DEFAULT 'xera_base',
+	`base_id` varchar(89) NOT NULL DEFAULT 'gfw_base',
 	`base_name` varchar(20) NOT NULL,
 	`base_email` varchar(100) NOT NULL,
 	`base_fourm` varchar(100) NOT NULL,
@@ -22,7 +22,7 @@ INSERT INTO `is_base` (
 	`base_template`,
 	`base_status`
 ) VALUES (
-	'xera_base',
+	'gfw_base',
 	'Web Host',
 	'abc@gmail.com',
 	'https://fourm.example.com',
@@ -35,7 +35,7 @@ INSERT INTO `is_base` (
 DROP TABLE IF EXISTS `is_recaptcha`;
 
 CREATE TABLE `is_recaptcha` (
-	`recaptcha_id` varchar(89) NOT NULL DEFAULT 'xera_recaptcha',
+	`recaptcha_id` varchar(89) NOT NULL DEFAULT 'gfw_recaptcha',
 	`recaptcha_site` varchar(200) NOT NULL,
 	`recaptcha_key` varchar(200) NOT NULL,
 	`recaptcha_status` varchar(8) NOT NULL,
@@ -51,7 +51,7 @@ INSERT INTO `is_recaptcha` (
 	`recaptcha_status`,
 	`recaptcha_type`
 ) VALUES (
-	'xera_recaptcha',
+	'gfw_recaptcha',
 	'site key',
 	'secret key',
 	'inactive',
@@ -63,7 +63,7 @@ INSERT INTO `is_recaptcha` (
 DROP TABLE IF EXISTS `is_smtp`;
 
 CREATE TABLE `is_smtp` (
-	`smtp_id` varchar(9) NOT NULL DEFAULT 'xera_smtp',
+	`smtp_id` varchar(9) NOT NULL DEFAULT 'gfw_smtp',
 	`smtp_hostname` varchar(100) NOT NULL,
 	`smtp_username` varchar(100) NOT NULL,
 	`smtp_password` varchar(100) NOT NULL,
@@ -86,7 +86,7 @@ INSERT INTO `is_smtp` (
 	`smtp_status`,
 	`smtp_name`
 ) VALUES (
-	'xera_smtp',
+	'gfw_smtp',
 	'smtp.example.com',
 	'username',
 	'password',
@@ -101,7 +101,7 @@ INSERT INTO `is_smtp` (
 DROP TABLE IF EXISTS `is_mofh`;
 
 CREATE TABLE `is_mofh` (
-	`mofh_id` varchar(9) NOT NULL DEFAULT 'xera_mofh',
+	`mofh_id` varchar(9) NOT NULL DEFAULT 'gfw_mofh',
 	`mofh_username` varchar(256) NOT NULL,
 	`mofh_password` varchar(256) NOT NULL,
 	`mofh_cpanel` varchar(100) NOT NULL,
@@ -121,7 +121,7 @@ INSERT INTO `is_mofh` (
 	`mofh_ns_2`,
 	`mofh_package`
 ) VALUES (
-	'xera_mofh',
+	'gfw_mofh',
 	'username',
 	'password',
 	'cpanel',
@@ -428,7 +428,7 @@ INSERT INTO `is_domain` (`domain_name`) VALUES ('.example.com');
 DROP TABLE IF EXISTS `is_builder`;
 
 CREATE TABLE `is_builder` (
-	`builder_id` varchar(12) NOT NULL DEFAULT 'xera_builder',
+	`builder_id` varchar(12) NOT NULL DEFAULT 'gfw_builder',
 	`builder_hostname` varchar(100) NOT NULL,
 	`builder_username` varchar(100) NOT NULL,
 	`builder_password` varchar(100) NOT NULL,
@@ -452,7 +452,7 @@ INSERT INTO `is_builder` (
 DROP TABLE IF EXISTS `is_gogetssl`;
 
 CREATE TABLE `is_gogetssl` (
-	`gogetssl_id` varchar(13) NOT NULL DEFAULT 'xera_gogetssl',
+	`gogetssl_id` varchar(13) NOT NULL DEFAULT 'gfw_gogetssl',
 	`gogetssl_username` varchar(100) NOT NULL,
 	`gogetssl_password` varchar(100) NOT NULL,
 	`gogetssl_status` varchar(8) NOT NULL
@@ -473,7 +473,7 @@ INSERT INTO `is_gogetssl` (
 DROP TABLE IF EXISTS `is_acme`;
 
 CREATE TABLE `is_acme` (
-	`acme_id` varchar(13) NOT NULL DEFAULT 'xera_acme',
+	`acme_id` varchar(13) NOT NULL DEFAULT 'gfw_acme',
 	`acme_letsencrypt` varchar(100) NOT NULL,
 	`acme_zerossl` varchar(1000) NOT NULL,
 	`acme_googletrust` varchar(1000) NOT NULL,

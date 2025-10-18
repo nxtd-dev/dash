@@ -191,7 +191,7 @@ class Smtp extends CI_Model
 	{
 		$res = $this->base->update(
 			[$field => $value],
-			['id' => 'xera_smtp'],
+			['id' => 'gfw_smtp'],
 			'is_smtp',
 			'smtp_'
 		);
@@ -206,7 +206,7 @@ class Smtp extends CI_Model
 	{
 		$res = $this->base->fetch(
 			'is_smtp',
-			['id' => 'xera_smtp'],
+			['id' => 'gfw_smtp'],
 			'smtp_'
 		);
 		if(count($res) > 0)

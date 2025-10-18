@@ -140,7 +140,7 @@ class SitePro extends CI_Model
 	{
 		$res = $this->base->update(
 			[$field => $value],
-			['id' => 'xera_builder'],
+			['id' => 'gfw_builder'],
 			'is_builder',
 			'builder_'
 		);
@@ -155,7 +155,7 @@ class SitePro extends CI_Model
 	{
 		$res = $this->base->fetch(
 			'is_builder',
-			['id' => 'xera_builder'],
+			['id' => 'gfw_builder'],
 			'builder_'
 		);
 		if(count($res) > 0)

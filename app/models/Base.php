@@ -179,7 +179,7 @@ class Base extends CI_Model
 
 	private function fetch_base()
 	{
-		$res = $this->fetch('is_base', ['id' => 'xera_base']);
+		$res = $this->fetch('is_base', ['id' => 'gfw_base']);
 		if(count($res)>0)
 		{
 			return $res[0];
@@ -191,7 +191,7 @@ class Base extends CI_Model
 	{
 		$res = $this->update(
 			[$field => $value],
-			['id' => 'xera_base']
+			['id' => 'gfw_base']
 		);
 		if($res)
 		{

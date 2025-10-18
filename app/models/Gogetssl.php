@@ -341,7 +341,7 @@ class Gogetssl extends CI_Model
 	{
 		$res = $this->base->update(
 			[$index => $value],
-			['id' => 'xera_gogetssl'],
+			['id' => 'gfw_gogetssl'],
 			'is_gogetssl',
 			'gogetssl_'
 		);
@@ -356,7 +356,7 @@ class Gogetssl extends CI_Model
 	{
 		$res = $this->base->fetch(
 			'is_gogetssl',
-			['id' => 'xera_gogetssl'],
+			['id' => 'gfw_gogetssl'],
 			'gogetssl_'
 		);
 		if(count($res) > 0)
