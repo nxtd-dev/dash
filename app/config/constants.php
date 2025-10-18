@@ -89,7 +89,7 @@ defined('EXIT__AUTO_MAX')      or define('EXIT__AUTO_MAX', 125); // highest auto
 | Build Information
 |--------------------------------------------------------------------------
 |
-| These constants define the build information of gfw
+| These constants define the build information of Get Free Website
 |
 */
 defined('XERA_VERSION')        or define('XERA_VERSION', '1.3.1'); // build version
@@ -102,7 +102,7 @@ defined('XERA_AFFL')        or define('XERA_AFFL', 123456); // iFastNet affiliat
 | Hashing Algorithum
 |--------------------------------------------------------------------------
 |
-| These constants define the hashing algos fors gfw
+| These constants define the hashing algos fors Get Free Website
 |
 */
 defined("HASH_ALGO_64")        or define('HASH_ALGO_64', 'sha256'); // 64 charatchers hashing algo

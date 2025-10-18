@@ -15,7 +15,7 @@
 	        <div class="empty-header"><img src="<?= base_url()?>assets/<?= $this->base->get_template() ?>/img/gfw.png" class="img-fluid"></div>
 		        <p class="empty-title">Version <?= get_version() ?></p>
 		        <p class="empty-subtitle text-muted">
-		        	 You are using the latest version of gfw.
+		        	 You are using the latest version of Get Free Website.
 		        </p>
 	        </div>
 		</div>
