@@ -97,7 +97,7 @@
 						</div>
 						<div class="col">
 							<div class="font-weight-medium">
-								About Get Free Website
+								About GetFreeWebsite
 							</div>
 							<div class="text-muted">
 								<a href="<?= base_url() ?>about" class="text-muted" target="_blank">View here.</a>
@@ -202,7 +202,7 @@
 						</div>
 						<div class="col">
 							<div class="font-weight-medium">
-								Like Get Free Website?
+								Like GetFreeWebsite?
 							</div>
 							<div class="text-muted">
 								<a href="https://gfw.eu.org/DONATE.md" class="text-muted" target="_blank">Donate here.</a>

@@ -335,7 +335,7 @@ Several other fixes and improvements.
 - Compatibility of URIs with `file` scheme and empty host.
 
 
-## [1.3.1] - 2016-06-25
+## [1.0.0] - 2016-06-25
 
 ### Fixed
 
@@ -438,8 +438,8 @@ Currently unsupported:
 [1.5.0]: https://github.com/guzzle/psr7/compare/1.4.2...1.5.0
 [1.4.2]: https://github.com/guzzle/psr7/compare/1.4.1...1.4.2
 [1.4.1]: https://github.com/guzzle/psr7/compare/1.4.0...1.4.1
-[1.4.0]: https://github.com/guzzle/psr7/compare/1.3.1...1.4.0
-[1.3.1]: https://github.com/guzzle/psr7/compare/1.3.0...1.3.1
+[1.4.0]: https://github.com/guzzle/psr7/compare/1.0.0...1.4.0
+[1.0.0]: https://github.com/guzzle/psr7/compare/1.3.0...1.0.0
 [1.3.0]: https://github.com/guzzle/psr7/compare/1.2.3...1.3.0
 [1.2.3]: https://github.com/guzzle/psr7/compare/1.2.2...1.2.3
 [1.2.2]: https://github.com/guzzle/psr7/compare/1.2.1...1.2.2

@@ -15,13 +15,13 @@ $base_path = str_replace('2', '', $base_path);
 $base_path = str_replace('3', '', $base_path);
 $base_url = $protocol . $hostname . $base_path;
 if (isset($_GET['step']) and $_GET['step'] == 1) {
-	$title = 'Basic Settings - Get Free Website Installation';
+	$title = 'Basic Settings - GetFreeWebsite Installation';
 } elseif (isset($_GET['step']) and $_GET['step'] == 2) {
-	$title = 'Database Settings - Get Free Website Installation';
+	$title = 'Database Settings - GetFreeWebsite Installation';
 } elseif (isset($_GET['step']) and $_GET['step'] == 3) {
-	$title = 'Next Step - Get Free Website Installation';
+	$title = 'Next Step - GetFreeWebsite Installation';
 } else {
-	$title = 'Welcome to Get Free Website Installation Page';
+	$title = 'Welcome to GetFreeWebsite Installation Page';
 }
 ?>
 <!DOCTYPE html>
@@ -95,16 +95,16 @@ if (isset($_GET['step']) and $_GET['step'] == 1) {
 					</form>
 				<?php elseif (isset($_GET['step']) and $_GET['step'] == 3) : ?>
 					<div class="card-body">
-						<h2 class="card-title text-center mb-3">Welcome to Get Free Website!</h2>
-						<p class="text-muted mb-3">Get Free Website has been installed successfully! Once you click on the button below, you will be redirected to the admin registration page and the install.php file will be deleted automatically.</p>
+						<h2 class="card-title text-center mb-3">Welcome to GetFreeWebsite!</h2>
+						<p class="text-muted mb-3">GetFreeWebsite has been installed successfully! Once you click on the button below, you will be redirected to the admin registration page and the install.php file will be deleted automatically.</p>
 						<div class="form-footer mt-1">
 							<a href="<?= $base_url ?>admin/register" class="btn btn-primary w-100">Redirect</a>
 						</div>
 					</div>
 				<?php else : ?>
 					<div class="card-body">
-						<h2 class="card-title text-center mb-3">Welcome to Get Free Website!</h2>
-						<p class="text-muted mb-3">Get Free Website is a hosting account and support management system especially designed to work with MyOwnFreeHost and the GoGetSSL API. Please click on the button below to continue the installation.</p>
+						<h2 class="card-title text-center mb-3">Welcome to GetFreeWebsite!</h2>
+						<p class="text-muted mb-3">GetFreeWebsite is a hosting account and support management system especially designed to work with MyOwnFreeHost and the GoGetSSL API. Please click on the button below to continue the installation.</p>
 						<div class="form-footer mt-1">
 							<a href="<?= $base_url ?>install.php?step=1" class="btn btn-primary w-100">Get Started</a>
 						</div>
