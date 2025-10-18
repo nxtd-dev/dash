@@ -144,7 +144,7 @@ if (isset($_GET['step']) and $_GET['step'] == 1 and isset($_POST['submit'])) {
 	} else {
 		$csrf_value = 'TRUE';
 	}
-	$file = file_get_contents('https://raw.githubusercontent.com/LightHostingFree/Get Free Website/dev/app/config/config.php');
+	$file = file_get_contents('https://raw.githubusercontent.com/LightHostingFree/gfw/dev/app/config/config.php');
 	$data = str_replace('BASE_URL_VALUE', $base_url_value, $file);
 	$data = str_replace('COOKIE_PREFIX_VALUE', $cookie_prefix, $data);
 	$data = str_replace('CSRF_PROTECTION_MODE', $csrf_value, $data);
@@ -325,7 +325,7 @@ if (isset($_GET['step']) and $_GET['step'] == 1 and isset($_POST['submit'])) {
                 $sql = mysqli_query($mysqli, "ALTER TABLE is_recaptcha CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
                 $sql = mysqli_query($mysqli, "ALTER TABLE is_reply CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
 		if ($sql) {
-			$file = file_get_contents('https://raw.githubusercontent.com/LightHostingFree/Get Free Website/dev/app/config/database.php');
+			$file = file_get_contents('https://raw.githubusercontent.com/LightHostingFree/gfw/dev/app/config/database.php');
 			$data = str_replace('DB_HOSTNAME', $hostname, $file);
 			$data = str_replace('DB_USERNAME', $username, $data);
 			$data = str_replace('DB_PASSWORD', $password, $data);
