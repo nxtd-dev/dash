@@ -1720,11 +1720,11 @@ class A extends CI_Controller
 				elseif ($data['data'] == False)
 				{
 					$this->session->set_flashdata('msg', json_encode([0, 'An error occured. Try again later.']));
-					redirect("ssl/list");
+					redirect("admin/ssl/list");
 				} else
 				{
 					$this->session->set_flashdata('msg', json_encode([0, $data['data']]));
-					redirect("ssl/list");
+					redirect("admin/ssl/list");
 				}
 			}
 		}
@@ -1736,3 +1736,4 @@ class A extends CI_Controller
 }
 
 ?>
+
