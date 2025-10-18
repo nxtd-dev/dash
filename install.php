@@ -15,13 +15,13 @@ $base_path = str_replace('2', '', $base_path);
 $base_path = str_replace('3', '', $base_path);
 $base_url = $protocol . $hostname . $base_path;
 if (isset($_GET['step']) and $_GET['step'] == 1) {
-	$title = 'Basic Settings - Get Free Website Installation';
+	$title = 'Basic Settings - gfw Installation';
 } elseif (isset($_GET['step']) and $_GET['step'] == 2) {
-	$title = 'Database Settings - Get Free Website Installation';
+	$title = 'Database Settings - gfw Installation';
 } elseif (isset($_GET['step']) and $_GET['step'] == 3) {
-	$title = 'Next Step - Get Free Website Installation';
+	$title = 'Next Step - gfw Installation';
 } else {
-	$title = 'Welcome to Get Free Website Installation Page';
+	$title = 'Welcome to gfw Installation Page';
 }
 ?>
 <!DOCTYPE html>
@@ -95,16 +95,16 @@ if (isset($_GET['step']) and $_GET['step'] == 1) {
 					</form>
 				<?php elseif (isset($_GET['step']) and $_GET['step'] == 3) : ?>
 					<div class="card-body">
-						<h2 class="card-title text-center mb-3">Welcome to Get Free Website!</h2>
-						<p class="text-muted mb-3">Get Free Website has been installed successfully! Once you click on the button below, you will be redirected to the admin registration page and the install.php file will be deleted automatically.</p>
+						<h2 class="card-title text-center mb-3">Welcome to gfw!</h2>
+						<p class="text-muted mb-3">gfw has been installed successfully! Once you click on the button below, you will be redirected to the admin registration page and the install.php file will be deleted automatically.</p>
 						<div class="form-footer mt-1">
 							<a href="<?= $base_url ?>admin/register" class="btn btn-primary w-100">Redirect</a>
 						</div>
 					</div>
 				<?php else : ?>
 					<div class="card-body">
-						<h2 class="card-title text-center mb-3">Welcome to Get Free Website!</h2>
-						<p class="text-muted mb-3">Get Free Website is a hosting account and support management system especially designed to work with MyOwnFreeHost and the GoGetSSL API. Please click on the button below to continue the installation.</p>
+						<h2 class="card-title text-center mb-3">Welcome to gfw!</h2>
+						<p class="text-muted mb-3">gfw is a hosting account and support management system especially designed to work with MyOwnFreeHost and the GoGetSSL API. Please click on the button below to continue the installation.</p>
 						<div class="form-footer mt-1">
 							<a href="<?= $base_url ?>install.php?step=1" class="btn btn-primary w-100">Get Started</a>
 						</div>
@@ -144,7 +144,7 @@ if (isset($_GET['step']) and $_GET['step'] == 1 and isset($_POST['submit'])) {
 	} else {
 		$csrf_value = 'TRUE';
 	}
-	$file = file_get_contents('https://raw.githubusercontent.com/LightHostingFree/Get Free Website/dev/app/config/config.php');
+	$file = file_get_contents('https://raw.githubusercontent.com/LightHostingFree/gfw/dev/app/config/config.php');
 	$data = str_replace('BASE_URL_VALUE', $base_url_value, $file);
 	$data = str_replace('COOKIE_PREFIX_VALUE', $cookie_prefix, $data);
 	$data = str_replace('CSRF_PROTECTION_MODE', $csrf_value, $data);
@@ -325,7 +325,7 @@ if (isset($_GET['step']) and $_GET['step'] == 1 and isset($_POST['submit'])) {
                 $sql = mysqli_query($mysqli, "ALTER TABLE is_recaptcha CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
                 $sql = mysqli_query($mysqli, "ALTER TABLE is_reply CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
 		if ($sql) {
-			$file = file_get_contents('https://raw.githubusercontent.com/LightHostingFree/Get Free Website/dev/app/config/database.php');
+			$file = file_get_contents('https://raw.githubusercontent.com/LightHostingFree/gfw/dev/app/config/database.php');
 			$data = str_replace('DB_HOSTNAME', $hostname, $file);
 			$data = str_replace('DB_USERNAME', $username, $data);
 			$data = str_replace('DB_PASSWORD', $password, $data);

@@ -97,7 +97,7 @@
 						</div>
 						<div class="col">
 							<div class="font-weight-medium">
-								About Get Free Website
+								About gfw
 							</div>
 							<div class="text-muted">
 								<a href="<?= base_url() ?>about" class="text-muted" target="_blank">View here.</a>
@@ -142,7 +142,7 @@
 								Documentation
 							</div>
 							<div class="text-muted">
-								<a href="https://github.com/LightHostingFree/Get Free Website/blob/dev/Setup-Guide.md" class="text-muted" target="_blank">Setup Guide</a>
+								<a href="https://github.com/LightHostingFree/gfw/blob/dev/Setup-Guide.md" class="text-muted" target="_blank">Setup Guide</a>
 							</div>
 						</div>
 					</div>
@@ -163,7 +163,7 @@
 								Need Help?
 							</div>
 							<div class="text-muted">
-								<a href="https://github.com/LightHostingFree/Get Free Website/issues" class="text-muted" target="_blank">Open an issue in GitHub.</a>
+								<a href="https://github.com/LightHostingFree/gfw/issues" class="text-muted" target="_blank">Open an issue in GitHub.</a>
 							</div>
 						</div>
 					</div>
@@ -184,7 +184,7 @@
 								Contribute
 							</div>
 							<div class="text-muted">
-								<a href="https://github.com/LightHostingFree/Get Free Website/#help" class="text-muted" target="_blank">Check here.</a>
+								<a href="https://github.com/LightHostingFree/gfw/#help" class="text-muted" target="_blank">Check here.</a>
 							</div>
 						</div>
 					</div>
@@ -202,7 +202,7 @@
 						</div>
 						<div class="col">
 							<div class="font-weight-medium">
-								Like Get Free Website?
+								Like gfw?
 							</div>
 							<div class="text-muted">
 								<a href="https://gfw.eu.org/DONATE.md" class="text-muted" target="_blank">Donate here.</a>

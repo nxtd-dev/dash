@@ -8,11 +8,11 @@
 > Pull requests are welcome and will still be accepted. If you'd like to see a feature, feel free to contribute it.
 > Thanks to @greenreader9 for answering people's questions and solving their issues while I was gone.
 
-## 👀 What is Get Free Website?
-Get Free Website is a hosting account and support management system specially designed to work with MOFH (MyOwnFreeHost). Get Free Website currently has a limited number of features, which are listed below:
+## 👀 What is gfw?
+gfw is a hosting account and support management system specially designed to work with MOFH (MyOwnFreeHost). gfw currently has a limited number of features, which are listed below:
 
 [![AppVeyor](https://img.shields.io/badge/Licence-GPL_2.0-orange)](LICENSE)
-[![AppVeyor](https://img.shields.io/badge/Version-v1.3.1-informational)](https://github.com/LightHostingFree/Get Free Website/releases/latest)
+[![AppVeyor](https://img.shields.io/badge/Version-v1.3.1-informational)](https://github.com/LightHostingFree/gfw/releases/latest)
 ![AppVeyor](https://img.shields.io/badge/Build-Passed-brightgreen)
 ![AppVeyor](https://img.shields.io/badge/Interface-Tabler-lightgreen)
 ![AppVeyor](https://img.shields.io/badge/Development-Live-brightgreen)
@@ -39,16 +39,16 @@ Get Free Website is a hosting account and support management system specially de
 ## 🤸 Getting Started
 
 ### 🚅 Requirements
-Your server needs to meet the following minimum requirements to run Get Free Website:
+Your server needs to meet the following minimum requirements to run gfw:
 - PHP v8.1 or above.
 - MySQL v5.7 or above.
 - A valid, trusted SSL certificate.
 
 ### 💾 Installation 
-The installation of Get Free Website is much easier than you think!
-- Download the Get Free Website installation files [here](https://github.com/LightHostingFree/Get Free Website/releases/latest). Alternatively, if you want the latest development version, you can get it [here](https://github.com/LightHostingFree/Get Free Website/archive/refs/heads/dev.zip).
+The installation of gfw is much easier than you think!
+- Download the gfw installation files [here](https://github.com/LightHostingFree/gfw/releases/latest). Alternatively, if you want the latest development version, you can get it [here](https://github.com/LightHostingFree/gfw/archive/refs/heads/dev.zip).
 - Extract the file and upload the contents to your web hosting account. 
-- Create a new database for Get Free Website.
+- Create a new database for gfw.
 - Go to ```https://{your.domain}/{gfw-directory}/install.php``` and click on the 'Get Started' button.
 - Set your website's ```Website URL```, ```Cookie Prefix```, enable ```CSRF Protection``` and hit the 'Next Step' button.
 - Edit the database credentials and click on the 'Next Step' button (this will automatically import tables and records to the database).
@@ -58,7 +58,7 @@ The installation of Get Free Website is much easier than you think!
 - Refer to [Setup Guide](Setup-Guide.md)
 
 ### 📧 SMTP
-Here are some widely used SMTP services. They have free plans with some limitations; most importantly, though, they are compatible with Get Free Website.
+Here are some widely used SMTP services. They have free plans with some limitations; most importantly, though, they are compatible with gfw.
 - [Mailgun](https://www.mailgun.com/). 
 > **Note**  
 > Mailgun seems to offer only a trial plan for a month, and without adding a credit card, you are only authorized to send emails to 5 recipients. Therefore, you may want to choose another service.
@@ -67,10 +67,10 @@ Here are some widely used SMTP services. They have free plans with some limitati
 - [MailTrap](https://mailtrap.io)
 
 ### 🤔 Help
-You can [open an issue here](https://github.com/LightHostingFree/Get Free Website/issues/new) if you have discovered a bug or have an issue. In any way, please ensure your topic has not been previously discussed, and if it has, contribute to that discussion instead of making a new one when you can.
+You can [open an issue here](https://github.com/LightHostingFree/gfw/issues/new) if you have discovered a bug or have an issue. In any way, please ensure your topic has not been previously discussed, and if it has, contribute to that discussion instead of making a new one when you can.
 
-### 👍Like Get Free Website?
-If you like project Get Free Website, please donate [here](https://gfw.eu.org/DONATE.md).
+### 👍Like gfw?
+If you like project gfw, please donate [here](https://gfw.eu.org/DONATE.md).
 
 ## ©️ Copyright
 This build is created and maintained by [Mayank Baswal](https://github.com/LightHostingFree). Code released under [the GPL-2.0 license](LICENSE).<br>
