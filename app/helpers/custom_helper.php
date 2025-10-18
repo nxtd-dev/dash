@@ -90,27 +90,27 @@ if (!function_exists('get_templates')) {
 if (!function_exists('get_version')) {
 	function get_version()
 	{
-		return XERA_VERSION;
+		return GFW_VERSION;
 	}
 }
 
 if (!function_exists('get_tag')) {
 	function get_tag()
 	{
-		return XERA_TAG;
+		return GFW_TAG;
 	}
 }
 
 if (!function_exists('get_aff_id')) {
 	function get_aff_id()
 	{
-		return XERA_AFFL;
+		return GFW_AFFL;
 	}
 }
 
 if (!function_exists('build_date')) {
 	function build_date()
 	{
-		return XERA_DATE;
+		return GFW_DATE;
 	}
 }

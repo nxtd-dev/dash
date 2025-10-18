@@ -92,10 +92,10 @@ defined('EXIT__AUTO_MAX')      or define('EXIT__AUTO_MAX', 125); // highest auto
 | These constants define the build information of GetFreeWebsite
 |
 */
-defined('XERA_VERSION')        or define('XERA_VERSION', '1.0.0'); // build version
-defined('XERA_TAG')            or define('XERA_TAG', 'Eternity Improved'); // build tag
-defined('XERA_DATE')        or define('XERA_DATE', '11-07-2024'); // build date
-defined('XERA_AFFL')        or define('XERA_AFFL', 123456); // iFastNet affiliate id
+defined('GFW_VERSION')        or define('GFW_VERSION', '1.0.0'); // build version
+defined('GFW_TAG')            or define('GFW_TAG', 'Eternity Improved'); // build tag
+defined('GFW_DATE')        or define('GFW_DATE', '11-07-2024'); // build date
+defined('GFW_AFFL')        or define('GFW_AFFL', 123456); // iFastNet affiliate id
 
 /*
 |--------------------------------------------------------------------------
