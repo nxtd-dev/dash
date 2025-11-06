@@ -88,7 +88,7 @@
 - Memory leak on exceptions
 
 
-## 1.0.0 - 2016-12-20
+## 1.3.1 - 2016-12-20
 
 ### Fixed
 
