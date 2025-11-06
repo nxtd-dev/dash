@@ -335,7 +335,7 @@ Several other fixes and improvements.
 - Compatibility of URIs with `file` scheme and empty host.
 
 
-## [1.0.0] - 2016-06-25
+## [1.3.1] - 2016-06-25
 
 ### Fixed
 
