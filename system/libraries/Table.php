@@ -32,7 +32,7 @@
  * @copyright	Copyright (c) 2014 - 2019, British Columbia Institute of Technology (https://bcit.ca/)
  * @license	https://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
- * @since	Version 1.0.0
+ * @since	Version 1.3.1
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
