@@ -30,3 +30,4 @@ $lang['record_name'] = '記錄名稱';
 $lang['record_content'] = '記錄內容';
 $lang['expired'] = '已到期';
 $lang['record_type'] = '記錄類型';
+$lang['gen_auto'] = '自動生成';
