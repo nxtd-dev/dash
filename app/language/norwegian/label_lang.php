@@ -30,3 +30,4 @@ $lang['record_name'] = 'Opptaksnavn';
 $lang['record_content'] = 'Ta opp innhold';
 $lang['expired'] = 'Utløpt';
 $lang['record_type'] = 'Posttype';
+$lang['gen_auto'] = 'Genereres automatisk';
