@@ -190,7 +190,7 @@ class acme extends CI_Model
         $key = substr($key, 0, 20);
 
         $this->load->library('acmedns');
-        $acmednsUrl = 'https://auth.acme-dns.io';
+        $acmednsUrl = 'https://acme.getfreeweb.site';
         $acmedns = new Acmedns();
         $acmedns->setProvider($acmednsUrl);
 
